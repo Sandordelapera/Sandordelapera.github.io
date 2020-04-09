@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+     <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.15.0/css/mdb.min.css" rel="stylesheet">
+
+    <!-- Para lograr el cambio del color en el Menu es necesario agregar las clases que aparecen en el archivo style.css -->
+    <link href="css/style.css" rel="stylesheet">
+    
+</head>
+
+<body>
+
+  <!-- Elementos importantes en este Menu <nav>:
+     1. navbar-dark (texto y fondo en blanco)
+     2. blue (color de fondo azul)
+     3. gris (clase de style.css)
+     4. fixed-top  (fija el menu en el top de la pagina) 
+     5. scrolling-navbar  (aparece efecto que reduce el Menu de navegación y haciendo uso de la
+     6. top-nav-collapse    clase style.css cambia de color del Menu de navegación cuando hacemos scroll)
+     7. data-scroll href="#inicio" (haciendo uso de la function de javascript que aparece al final del body nos permite ir directo a cada seccion a la cual hace referencia) 
+  -->
+  <nav class="navbar navbar-expand-md navbar-dark gris scrolling-navbar fixed-top">
+    <div class="container">
+      <!-- **** El navbar-brand es el ancla del logo -->
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link font-weight-bolder" data-scroll href="#inicio">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bolder" data-scroll href="#nosotros">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bolder" data-scroll href="#servicios">Servicios</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item">
+            <a class="nav-link"><i class="fab fa-facebook-f"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+  </nav>
+
+
+  <!-- Bloque que nos permite trabajar con Flexbox para hacer textos y formularios de contacto RESPONSIVE:
+
+      El uso de h1-responsive muestra el texto más pequeño mientras el dispositivo es más pequeño
+      d-none (esto permite que el texto y la linea desaparescan en dispositivos pequeños como los moviles)
+      d-md-block (permite que el texto y la linea aparezcan apartir de dispositivos medianos en adelante)
+
+      El uso de h4-reponsive muestra el texto más grande mientras el dispositivo es más pequeño
+      text-center (muestra el texto centrado en dispositivos pequeños como los moviles)
+      text-md-left (muestra el texto a la izquierda apartir de los dispositivos medianos en adelante) 
+      
+      Para dar animacion al texto y formulario es necesario agregar el script que esta al final y lo siguiente:
+      1. wow fadeInLeft" data-wow-delay="0.3s (anima el texto para que entre desde la izquierda)
+      2. wow fadeInRight" data-wow-delay="0.3s (anima el formulario para que entre desde la derecha)
+  -->             
+  <section class="fondo view" id="inicio">
+    <div class="mask rgba-black-light d-flex justify-content-center align-items-center"> 
+      <div class="container">
+        <div class="row d-flex justify-content-center align-items-center">
+          <!-- Textos responsives-->
+          <div class="col-md-6 white-text wow fadeInLeft" data-wow-delay="0.3s"> <!-- Esto significa que en dispositivos mas pequeños se va adaptar a 12 que es el total de la estructura de columnas-->
+             <h1 class="h1-responsive d-none d-md-block ">Lorem, ipsum dolor.</h1> 
+             <hr class="bg-light d-none d-md-block"> <!-- Divide los textos con una linea-->
+             <p class="h4-responsive text-center text-md-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, optio.</p> 
+             <div class="text-center text-md-left">
+                <button class="btn btn-indigo">Continuar
+                  <i class="fas fa-play ml-2"></i>
+                </button>
+             </div>
+          </div> 
+          <!-- Fin de textos responsive-->
+ 
+          <!-- START FORMULARIO
+            1. prefix  (clase que permite alinear el icono con el input)
+            2. indigo-text  (cambia el color del icono usado en MDB)
+            3. class="form-control" (nos permite alinear la etiqueta con el input)
+          -->
+          <div class="col-md-6 mt-3"> 
+            <div class="card wow fadeInRight" data-wow-delay="0.3s">
+              <div class="card-body"> <!-- El contenido del formulario esta dentro de la tarjeta  -->
+                <h3 class="text-center indigo-text"><b>Formulario de contacto</b></h3>
+                <hr>   <!-- Esta etiqueta hace una pequeña linea de division-->
+                <form>
+                  <div class="md-form">
+                    <i class="fas fa-user prefix indigo-text"></i>
+                    <input type="text" id="nombre" class="form-control">
+                    <label for="nombre">Nombre:</label>
+                  </div>
+                  <div class="md-form">
+                    <i class="fas fa-envelope prefix indigo-text"></i>
+                    <input type="text" id="email" class="form-control">
+                    <label for="email">Email:</label>
+                  </div>
+                  <div class="md-form">
+                    <i class="fas fa-inbox prefix indigo-text"></i>
+                    <textarea id="mensaje" class="md-textarea"></textarea>
+                    <label for="mensaje">Mensaje:</label>
+                  </div>
+                  <div class="text-center">
+                    <button class="btn btn-indigo">Enviar
+                      <i class="fas fa-paper-plane ml-2"></i>
+                    </button>  
+                  </div>
+                </form>
+              </div>
+
+            </div>
+          </div> 
+          <!-- END FORMULARIO-->
+       </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Embebiendo un video en la parte derecha del sitio 
+    Elementos importantes:
+    1. class="img-fluid" (garantiza que mi imagen sea responsive )
+    2. class="z-depth-1-half" (garantiza que mi imagen tenga un sombreado)
+    3. btn-md  (propiedad que hace al boton más pequeño)
+  -->
+  <main class="container">
+
+      <section class="row" id="nosotros">
+        <div class="col-md-6 mt-5">
+          <img src="https://mdbootstrap.com/img/Marketing/mdb-press-pack/mdb-main.jpg" alt="" class="img-fluid z-depth-1-half">
+        </div>
+
+        <div class="col-md-6 mt-5">
+          <h3 class="h3">Lorem, ipsum dolor.</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, culpa!</p>
+          <hr>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa facilis nihil corporis, possimus esse a quasi debitis molestias necessitatibus dolore? Ad id illo iure optio repudiandae architecto quaerat error quam?</p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic aut voluptatibus voluptatem necessitatibus modi autem!</p>
+          <a href="" class="btn btn-indigo btn-md">Ver más...        <!-- creando un botón con su vinculo -->
+            <i class="fas fa-info-circle ml-2"></i>                  <!-- etiqueta para agregar iconos -->
+          </a>  
+          <a href="" class="btn btn-indigo btn-md">Ver más...
+            <i class="fas fa-bell ml-2"></i>
+          </a>
+        </div>
+
+      </section>
+
+      <hr class="my-5">
+
+      <!--  Haciendo los textos de la parte izquierda del video
+        Cosas importantes:
+        1. fa-2x (permite que los iconos sean más grande)
+        2. embed-responsive embed-responsive-16by9  (Para lograr que los videos sean responsive)
+      -->
+      <section id="servicios"> 
+
+        <h3 class="h3 text-center">Lorem ipsum dolor sit.</h3>
+        <div class="row mt-5">
+
+          <div class="col-lg-6">
+
+            <div class="row">
+
+              <div class="col-1 mr-3">  <!-- mr-3 espaciado de 1 que completaria 2 + 10 con el siguiente div serian 12 -->
+                <i class="fa fa-code fa-2x indigo-text"></i>
+              </div>
+
+              <div class="col-10">
+                <h5 class="feature-title">Lorem ipsum dolor sit.</h5>
+                <p class="grey-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, perspiciatis?</p>
+              </div>
+            </div>
+
+            <div class="row">
+
+              <div class="col-1 mr-3">  <!-- mr-3 espaciado de 1 que completaria 2 + 10 con el siguiente div serian 12 -->
+                <i class="fa fa-code fa-2x indigo-text"></i>
+              </div>
+
+              <div class="col-10">
+                <h5 class="feature-title">Lorem ipsum dolor sit.</h5>
+                <p class="grey-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, perspiciatis?</p>
+              </div>
+            </div>
+
+            <div class="row">
+
+              <div class="col-1 mr-3">  <!-- mr-3 espaciado de 1 que completaria 2 + 10 con el siguiente div serian 12 -->
+                <i class="fa fa-code fa-2x indigo-text"></i>
+              </div>
+
+              <div class="col-10">
+                <h5 class="feature-title">Lorem ipsum dolor sit.</h5>
+                <p class="grey-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, perspiciatis?</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="video/20200109_182255.mp4" allowfullscreen></iframe>
+              <!--<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe> -->
+            </div>
+          </div>
+
+        </div>
+
+
+      </section>
+
+  </main>
+
+  <br><br><br><br><br><br><br>
+ 
+  <!-- Footer -->
+    <footer class="page-footer font-small blue-gradient darken-3 mt-5">
+
+      <!-- Footer Elements -->
+      <div class="container">
+
+        <!-- Grid row-->
+        <div class="row">
+
+          <!-- Grid column -->
+          <div class="col-md-12 py-5">
+            <div class="mb-5 flex-center">
+
+              <!-- Facebook -->
+              <a class="fb-ic">
+                <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+              </a>
+              <!-- Twitter -->
+              <a class="tw-ic">
+                <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+              </a>
+              <!-- Google +-->
+              <a class="gplus-ic">
+                <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+              </a>
+              <!--Linkedin -->
+              <a class="li-ic">
+                <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+              </a>
+              <!--Instagram-->
+              <a class="ins-ic">
+                <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+              </a>
+              <!--Pinterest-->
+              <a class="pin-ic">
+                <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+              </a>
+            </div>
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row-->
+
+      </div>
+      <!-- Footer Elements -->
+
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+      </div>
+      <!-- Copyright -->
+
+    </footer>
+  <!-- Footer -->
+
+  
+  <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.15.0/js/mdb.min.js"></script>
+
+    <!-- Get patch fixes within a minor version -->
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0/dist/smooth-scroll.polyfills.min.js"></script>
+    
+    <script>
+      $( document ).ready(function() {
+      new WOW().init();
+      });
+     /* Bloque de codigo que implementa el smooth scroll    */
+      var scroll = new SmoothScroll('a[href*="#"]',{
+        offset: 95,
+        speed: 1000
+      });
+     /* Fin del bloque*/ 
+    </script>
+</body>
+</html>
