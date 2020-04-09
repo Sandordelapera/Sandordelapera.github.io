@@ -1,0 +1,20 @@
+/* Imagen cargada de un servidor externo y usada en mi sitio */
+.fondo{
+    height: 100vh;
+    background: url('https://mdbootstrap.com/img/Photos/Others/images/78.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /*(para que la imagen se adapte al dispositivo que esta haciendo uso de ella)*/
+}
+
+/* Sombreado del Menu aplicando este estilo */
+.gris{
+    background: rgba(0, 0, 0, 0.2);
+}
+
+
+/* Esta clase permite cambiar de color el menu cuando hagamos uso del scroll en la pagina*/
+.top-nav-collapse{
+    background: rgba(0, 0, 0, 0.774) !important;
+}
+
+
